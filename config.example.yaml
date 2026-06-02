@@ -1,0 +1,26 @@
+camera:
+  device_index: 0
+  width: 640
+  height: 480
+  fps: 10
+
+roi:
+  # setup_roi.py で設定。未設定の場合はプレースホルダ（カメラ接続後に再設定すること）
+  door: [200, 50, 240, 380]
+  presence: [100, 300, 400, 150]
+
+detection:
+  door_ssim_threshold: 0.82
+  door_open_min_frames: 5
+  door_closed_stable_seconds: 30
+  motion_pixel_ratio_threshold: 0.02
+  motion_lookback_seconds: 5
+  alert_cooldown_seconds: 60
+
+notify:
+  ntfy_topic: "your-secret-topic-here"
+  sound_path: "assets/alert.wav"
+
+debug:
+  show_preview: false
+  log_level: INFO
