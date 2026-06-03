@@ -83,6 +83,7 @@ def run(config: AppConfig) -> int:
     notifier = Notifier(
         ntfy_topic=config.notify.ntfy_topic,
         sound_path=config.notify.sound_path,
+        entry_message=config.notify.entry_message,
     )
 
     frame_interval = 1.0 / config.camera.fps

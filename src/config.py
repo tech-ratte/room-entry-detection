@@ -37,6 +37,7 @@ class DetectionConfig:
 class NotifyConfig:
     ntfy_topic: str
     sound_path: Path
+    entry_message: str
 
 
 @dataclass(frozen=True)
@@ -126,6 +127,10 @@ def load_config(config_path: Path | str | None = None) -> AppConfig:
         notify=NotifyConfig(
             ntfy_topic=ntfy_topic,
             sound_path=sound_path,
+            entry_message=str(
+                notify_data.get("entry_message", "ドアが開きました（外からの入室）")
+            ).strip()
+            or "ドアが開きました（外からの入室）",
         ),
         debug=DebugConfig(
             show_preview=bool(debug_data.get("show_preview", False)),

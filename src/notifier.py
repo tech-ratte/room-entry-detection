@@ -11,14 +11,16 @@ from src.state_machine import EntryEvent
 logger = logging.getLogger(__name__)
 
 NTFY_URL = "https://ntfy.sh"
-ENTRY_MESSAGE = "ドアが開きました（外からの入室）"
 ENTRY_TITLE = "RoomEntryDetection"
 
 
 class Notifier:
-    def __init__(self, *, ntfy_topic: str, sound_path: Path) -> None:
+    def __init__(
+        self, *, ntfy_topic: str, sound_path: Path, entry_message: str
+    ) -> None:
         self._ntfy_topic = ntfy_topic
         self._sound_path = sound_path
+        self._entry_message = entry_message
 
     def notify_entry(self, event: EntryEvent) -> None:
         self._play_sound()
@@ -46,7 +48,7 @@ class Notifier:
             "Priority": "high",
         }
         body = (
-            f"{ENTRY_MESSAGE}\n"
+            f"{self._entry_message}\n"
             f"SSIM: {event.ssim_score:.3f}, motion_ratio: {event.motion_ratio:.4f}"
         )
         try:

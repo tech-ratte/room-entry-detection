@@ -20,6 +20,7 @@ detection:
 notify:
   ntfy_topic: "your-secret-topic-here"
   sound_path: "assets/alert.wav"
+  entry_message: "ドアが開きました（外からの入室）"
 
 debug:
   show_preview: false

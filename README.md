@@ -25,6 +25,7 @@ copy config.example.yaml config.yaml
 `config.yaml` を編集:
 
 - `notify.ntfy_topic` — ntfy.sh のトピック名（推測されにくい名前にする）
+- `notify.entry_message` — ntfy 通知本文の1行目（デフォルトは「ドアが開きました（外からの入室）」）
 - 必要に応じて `camera.device_index` など
 
 通知音（任意）: `assets/alert.wav` を置く。無い場合はシステムビープを鳴らします。
