@@ -27,7 +27,7 @@ class Camera:
 
     def open(self) -> bool:
         self.close()
-        capture = cv2.VideoCapture(self._config.device_index, cv2.CAP_DMSHOW)
+        capture = cv2.VideoCapture(self._config.device_index, cv2.CAP_DSHOW)
         capture.set(cv2.CAP_PROP_FRAME_WIDTH, self._config.width)
         capture.set(cv2.CAP_PROP_FRAME_HEIGHT, self._config.height)
         capture.set(cv2.CAP_PROP_FPS, self._config.fps)
