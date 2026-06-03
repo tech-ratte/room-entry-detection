@@ -158,9 +158,9 @@ debug:
 2. **基本タスクの作成**
 3. トリガー: **ログオン時**（または **コンピューターの起動時**）
 4. 操作: **プログラムの開始**
-   - プログラム: `C:\Users\...\RoomEntryDetection\.venv\Scripts\python.exe`
+   - プログラム: `C:\Users\...\room-entry-detection\.venv\Scripts\python.exe`
    - 引数: `-m src.main`
-   - 開始: `C:\Users\...\RoomEntryDetection`
+   - 開始: `C:\Users\...\room-entry-detection`
 5. 完了
 
 ログ確認はコンソール出力をファイルにリダイレクトするか、タスクの履歴を参照してください。
@@ -174,7 +174,7 @@ debug:
 ## プロジェクト構成
 
 ```
-RoomEntryDetection/
+room-entry-detection/
   config.example.yaml
   requirements.txt
   assets/alert.wav          # 任意
